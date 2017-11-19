@@ -1,0 +1,28 @@
+R(k) = a number made up entirely of 1's, which has a length of k. R(5) is 11111 R(100) is 1 followed by 99 1's. R(2) = 11. k is the length. R(k) is the function.
+
+k    = the length of a repunit number (repunit = all 1's)
+
+n    = a positive integer for which the GCD of n and 10 is 1 (GCD(n,10) == 1). 
+
+A(n) = the least value of k for which R(k) is divisible by n.
+A(n) = least k where R(k)/n 
+A(7) = the least value of k for which R(k) is divisible by 7. R(7) = 6, which means n = 7, k = 6, so 111111 is the first repunit number evenly divisible by 7, with GCD(7,10) == 1. 
+A(17) > 10, where R(+10)/17 
+Find:
+17 is the LEAST value of k for which R(k)/
+A(17) = 16
+
+k   R(k)               /n = the evenly divisible value
+
+6   111111             /21   = 5291
+18  111111111111111111 /19   = 5847953216374269
+16  1111111111111111   /17   = 65359477124183
+6   111111             /13   = 8547
+2   11                 /11   = 1
+9   1111111            /9    = 12345679
+6   111111             /7    = 15873
+3   111                /3    = 37
+
+
+find the least value for n for which 
+

@@ -1,0 +1,59 @@
+35 5 7 0
+4490448647 48647 48649 5000
+59716104761 104761 104773 10000
+150837163859 163859 163861 15000
+63065224771 224771 224797 20000
+25158287149 287149 287159 25000
+39944350423 350423 350429 30000
+51933415031 415031 415039 35000
+283956479953 479953 479957 40000
+164968545773 545773 545789 45000
+197238611977 611977 611993 50000
+473628679309 679309 679319 55000
+567999746797 746797 746807 60000
+797192814337 814337 814367 65000
+247300882433 882433 882439 70000
+707908951259 951259 951277 75000
+18613426663617118
+
+
+This is the correct output/answer. 
+
+Taking the last line as an example:
+
+707908[951259] 951259 951277
+707908[p1]     p1     p2
+
+707908 is the value that when multiplied by 10**length of p1, then adding p1 to it, then modding that value
+over p2, we get zero. Moving things around:
+
+10**d(p1)*707908 + p1 % p2 = 0
+10**d(p1)*707908           = p2 - p1 % n 
+a         x                = b       % n 
+a         x                = (p2-p1) % n
+          x                = a*(p2-p1) % n
+          
+
+
+          x                = (a*b)%n
+
+x = (a*b)%n
+
+Formula to solve:
+
+
+(10**d(p1)         *x + p1) % p2 == 0
+ 10**(length of p1)*x + p1 % p2 == 0
+ 10**(length of p1)*x + p1 == 0 when % by p2
+ 10**(d(p1))       *x      == -p1 when % by p2
+ 10**(d(p1))       *x + p2 == p2 - p1 when % by p2   [[[SINCE WE ARE % BY P2, ADDING ANOTHER INSTANCE OF P2 TO THE LEFT-HAND-SIDE OF THE EQUATION DOES NOT CHANGE THE %'D SOLUTION]]]
+ 10**(d(p1))       *x      == p2 - p1 when % by p2
+ a                 *x      == b            %    n    [[[This is a format of an equation called the extended Euclidean Algorithm. https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm]]]
+ 
+To solve, we will first need to write an extended_GCD algorithm, which will produce the Bezout coefficients, 
+which solve the equation: ax + by = gcd(a,b). x and y are the Bezout coefficients. When a and b are
+relatively prime (as they are in the problem), the gcd is = 1. Our search for x and y values that, when
+multiplied by a and b (p1 and p2), will yield 1 is useful. 
+
+
+

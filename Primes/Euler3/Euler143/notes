@@ -1,0 +1,25 @@
+
+S = area of triangle
+
+a = length of side BC
+b = length of side AC
+c = length of side AB
+
+trilinearA = (2S/a, 0, 0)
+trilinearB = (0, 2S/b, 0)
+trilinearC = (0, 0, 2S/c)
+
+alpha = a*csc(A)
+beta = b*csc(B)
+gamma = c*csc(C)
+
+distance between vertex A and alpha = p
+distance between vertex B and beta = q
+distance between vertex C and gamma = r
+
+distance (d) between two points (a'1, b'1, c'1) and (a'2, b'2, c'2) is:
+
+d**2 sin(C)**2 = (a'1-a'2)**2 + (b'1-b'2)**2 + 2(a'1-a'2)(b'1-b'2)cos(C)
+
+so we do the above calculation 3 times, each time changing the a'2, b'2, c'2 values from A to B to C, but keeping the a'1, b'1 and c'1 values fixed
+
